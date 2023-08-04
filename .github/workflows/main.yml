@@ -22,7 +22,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build Docker image
-        run: docker build -t my-django-app .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_NAME}} .
 
   deploy:
     needs: build
@@ -39,7 +39,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image to Docker Hub
-        run: docker push my-django-app
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_NAME}}
 
       # Добавьте дополнительные шаги для развертывания образа, например, на вашем сервере
 
