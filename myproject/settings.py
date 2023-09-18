@@ -25,7 +25,7 @@ SECRET_KEY = 'btk3w#_7y(o+uf4ongc2bp34jd7(c6lcuaij9rxm=cp09r6b@i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'mydatabase',
         'USER': 'myuser',
         'PASSWORD': 'mypassword',
-        'HOST': 'db',  # Имя сервиса контейнера с базой данных PostgreSQL в docker-compose.yml
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
